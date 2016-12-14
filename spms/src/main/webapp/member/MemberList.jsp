@@ -10,19 +10,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <title>회원 목록</title>
+
 </head>
 <body>
 <h1>회원목록</h1>
+<jsp:useBean id="member" scope="session" class="cafe.jjdev.spms.vo.Member"/>
+<div>
+Simple Project Management System
+<% if (member.getEmail() != null) { %>
+	<span>
+		<%=member.getName()%>
+		<a href="<%=request.getContextPath()%>/auth/logout">로그아웃</a>
+	</span>
+<%	} else{
+%>
+		<a href="<%=request.getContextPath()%>/auth/login">로그인</a>
+<%
+	}
+%>
+</div>
 <p><a href='add'>신규 회원</a></p>
 <%
 ArrayList<Member> members = (ArrayList<Member>)request.getAttribute("members");
-for(Member member : members) {
+for(Member m : members) {
 %>
-	<%=member.getNo()%>,
-	<a href='update?no=<%=member.getNo()%>'><%=member.getName()%></a>,
-	<%=member.getEmail()%>,
-	<%=member.getCreatedDate()%>
-	<a href='delete?no=<%=member.getNo()%>'>[삭제]</a><br>
+	<%=m.getNo()%>,
+	<a href='update?no=<%=m.getNo()%>'><%=m.getName()%></a>,
+	<%=m.getEmail()%>,
+	<%=m.getCreatedDate()%>
+	<a href='delete?no=<%=m.getNo()%>'>[삭제]</a><br>
 <%} %>
 
 <%= request.getAttribute("test") %>
