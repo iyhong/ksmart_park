@@ -44,6 +44,7 @@ public class MemberListServlet extends HttpServlet {
 			
 			// 데이터베이스에서 회원 정보를 가져와 Member에 담는다.
 			// 그리고 Member객체를 ArrayList에 추가한다.
+			//set메서드 리턴값이 자기자신이어서 아래처럼 setting 가능하다.
 			while(rs.next()) {
 				members.add(new Member()
 							.setNo(rs.getInt("MNO"))
