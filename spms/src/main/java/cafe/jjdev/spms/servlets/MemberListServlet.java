@@ -64,9 +64,12 @@ public class MemberListServlet extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/member/MemberList.jsp");
 			
 			request.setAttribute("test", "test");
-			rd.forward(request, response);
+			rd.include(request, response);
+			request.setAttribute("test", "test_¼öÁ¤");
+			//response.set
 			System.out.println(request.getAttribute("test"));
 			response.getWriter().write("test...");
+			
 		} catch (Exception e) {
 			throw new ServletException(e);
 			

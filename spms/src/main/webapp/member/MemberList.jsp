@@ -24,5 +24,7 @@ for(Member member : members) {
 	<%=member.getCreatedDate()%>
 	<a href='delete?no=<%=member.getNo()%>'>[삭제]</a><br>
 <%} %>
+
+<%= request.getAttribute("test") %>
 </body>
 </html>
