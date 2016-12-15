@@ -18,7 +18,7 @@ version="3.0">
 	</context-param>
 	<context-param>
 		<param-name>url</param-name>
-		<param-value>jdbc:mysql://localhost/jjdev?useUnicode=true&amp;characterEncoding=uft-8</param-value>
+		<param-value>jdbc:mysql://localhost/jjdev?useUnicode=true&amp;characterEncoding=euc-kr</param-value>
 	</context-param>
 	<context-param>
 		<param-name>username</param-name>
