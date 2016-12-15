@@ -13,7 +13,7 @@ public class AppInitServlet extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("AppInitServlet ÁØºñ¡¦");
+		System.out.println("AppInitServlet ì¤€ë¹„..");
 		super.init(config);
 		try {
 			ServletContext sc = this.getServletContext();
@@ -31,7 +31,7 @@ public class AppInitServlet extends HttpServlet {
 	
 	@Override
 	public void destroy() {
-		System.out.println("AppInitServlet ¸¶¹«¸®...");
+		System.out.println("AppInitServlet ë§ˆë¬´ë¦¬...");
 		super.destroy();
 		Connection conn = 
 				(Connection)this.getServletContext().getAttribute("conn"); 

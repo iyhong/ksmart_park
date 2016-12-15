@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import cafe.jjdev.spms.vo.Member;
 
-// UI Ãâ·Â ÄÚµå¸¦ Á¦°ÅÇÏ°í, UI »ı¼º ¹× Ãâ·ÂÀ» JSP¿¡°Ô À§ÀÓÇÑ´Ù.
+// UI ì¶œë ¥ ì½”ë“œë¥¼ ì œê±°í•˜ê³ , UI ìƒì„± ë° ì¶œë ¥ì„ JSPì—ê²Œ ìœ„ì„í•œë‹¤.
 @WebServlet("/member/list")
 public class MemberListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -47,8 +47,8 @@ public class MemberListServlet extends HttpServlet {
 			response.setContentType("text/html; charset=UTF-8");
 			ArrayList<Member> members = new ArrayList<Member>();
 			
-			// µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ È¸¿ø Á¤º¸¸¦ °¡Á®¿Í Member¿¡ ´ã´Â´Ù.
-			// ±×¸®°í Member°´Ã¼¸¦ ArrayList¿¡ Ãß°¡ÇÑ´Ù.
+			// ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ íšŒì› ì •ë³´ë¥¼ ê°€ì ¸ì™€ Memberì— ë‹´ëŠ”ë‹¤.
+			// ê·¸ë¦¬ê³  Memberê°ì²´ë¥¼ ArrayListì— ì¶”ê°€í•œë‹¤.
 			while(rs.next()) {
 				members.add(new Member()
 							.setNo(rs.getInt("MNO"))
@@ -57,15 +57,15 @@ public class MemberListServlet extends HttpServlet {
 							.setCreatedDate(rs.getDate("CRE_DATE"))	);
 			}
 			
-			// request¿¡ È¸¿ø ¸ñ·Ï µ¥ÀÌÅÍ º¸°üÇÑ´Ù.
+			// requestì— íšŒì› ëª©ë¡ ë°ì´í„° ë³´ê´€í•œë‹¤.
 			request.setAttribute("members", members);
 			
-			// JSP·Î Ãâ·ÂÀ» À§ÀÓÇÑ´Ù.
+			// JSPë¡œ ì¶œë ¥ì„ ìœ„ì„í•œë‹¤.
 			RequestDispatcher rd = request.getRequestDispatcher("/member/MemberList.jsp");
 			
 			request.setAttribute("test", "test");
 			rd.include(request, response);
-			request.setAttribute("test", "test_¼öÁ¤");
+			request.setAttribute("test", "test_ìˆ˜ì •");
 			//response.set
 			System.out.println(request.getAttribute("test"));
 			response.getWriter().write("test...");
