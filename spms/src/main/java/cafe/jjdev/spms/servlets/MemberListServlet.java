@@ -67,8 +67,8 @@ public class MemberListServlet extends HttpServlet {
 			rd.include(request, response);
 			request.setAttribute("test", "test_수정");
 			
-			RequestDispatcher rd2 = request.getRequestDispatcher("/member/forwardTest.jsp");
-			rd2.forward(request, response);
+			//RequestDispatcher rd2 = request.getRequestDispatcher("/member/forwardTest.jsp");
+			//rd2.forward(request, response);
 			
 			System.out.println(request.getAttribute("test"));
 			response.getWriter().write("test...");
