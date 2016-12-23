@@ -40,7 +40,8 @@ public class UploadFile extends HttpServlet {
 		String ext = strFileName.substring( pos + 1 );
 		System.out.println("ext : "+ext);
 		//파일 업로드
-        String dir = "D:/upload/";
+        String dir = "d://";
+        System.out.println("dir : "+dir);
         String filename = UUID.randomUUID().toString().replace("-", "");
         //String ext1 = ".jpg";
         part.write(dir+filename+"."+ext);
@@ -49,7 +50,7 @@ public class UploadFile extends HttpServlet {
 		System.out.println("결과 :"+part.getContentType());
 		
 		
-		String path = new java.io.File("..").getCanonicalPath();
+		String path = request.getServletContext().getRealPath("upload");
 		System.out.println("path:"+path);
 		
 		ContentInfoUtil util = new ContentInfoUtil();
