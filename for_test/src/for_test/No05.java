@@ -6,8 +6,7 @@ public class No05 {
 		int k = 0;
 		for(int i = 0;i<5;i++){
 			for(int j=0; j<i+1;j++){
-				System.out.print(alpha[k]);
-				k++;
+				System.out.print(alpha[k++]);
 			}
 			System.out.println("");
 		}
